@@ -45,8 +45,3 @@ h1 {
 #reset {
     background: gray;
 }
-
-button.item-remove img {
-    width: 12px;
-    height: 12px;
-}
