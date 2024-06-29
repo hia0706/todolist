@@ -82,6 +82,13 @@ function refreshList() {
         })
 
         ITEMS_CONTAINER.append(itemElement);
+
+    // focus 설정
+    if (items.length > 0) {
+        const firstDescriptionInput = ITEMS_CONTAINER.querySelector(".item-description");
+        if (firstDescriptionInput) {
+            firstDescriptionInput.focus();
+        }
     }
 }
 
