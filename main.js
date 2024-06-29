@@ -1,7 +1,7 @@
 const ITEMS_CONTAINER = document.getElementById("items");
 const ITEMS_TEMPLATE = document.getElementById("itemTemplate");
 const ADD_BUTTON = document.getElementById("add");
-const DELETE_BUTTON = document.getElementById("delete");
+
 
 let items = getItems();
 
@@ -38,11 +38,6 @@ function updateItem(item, key, value) {
     refreshList();
 }
 
-function deleteItem(item, key, value) {
-    item[key] = value;
-
-
-}
 
 function refreshList() {
     // 할일 목록 정렬
@@ -83,9 +78,6 @@ function refreshList() {
 
 ADD_BUTTON.addEventListener("click", () => {
     addItem();
-})
-
-DELETE_BUTTON.addEventListener("click", () => {
 })
 
 refreshList();
