@@ -43,6 +43,12 @@ function updateItem(item, key, value) {
     refreshList();
 }
 
+// 할 일 제거
+function removeItem(index) {
+    items.splice(index, 1);
+    setItems(items);
+    refreshList();
+}
 
 function refreshList() {
     // 할일 목록 정렬
@@ -61,10 +67,11 @@ function refreshList() {
     ITEMS_CONTAINER.innerText = "";
 
     // 할일 목록
-    for (const item of items) {
+    items.forEach((item, index) => {
         const itemElement = ITEMS_TEMPLATE.content.cloneNode(true);
         const descriptionInput = itemElement.querySelector(".item-description");
         const completedInput = itemElement.querySelector(".item-completed");
+        const removeButton = itemElement.querySelector(".item-remove");
 
         descriptionInput.value = item.description;
         completedInput.checked = item.completed;
@@ -82,6 +89,7 @@ function refreshList() {
         })
 
         ITEMS_CONTAINER.append(itemElement);
+    });
 
     // focus 설정
     if (items.length > 0) {
