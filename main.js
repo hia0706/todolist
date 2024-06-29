@@ -77,12 +77,20 @@ function refreshList() {
             updateItem(item, "completed", completedInput.checked);
         });
 
+        removeButton.addEventListener("click", () => {
+            removeItem(index);
+        })
+
         ITEMS_CONTAINER.append(itemElement);
     }
 }
 
 ADD_BUTTON.addEventListener("click", () => {
     addItem();
+})
+
+RESET_BUTTON.addEventListener("click", () => {
+    resetItem();
 })
 
 refreshList();
