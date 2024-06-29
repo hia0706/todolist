@@ -1,7 +1,7 @@
 const ITEMS_CONTAINER = document.getElementById("items");
 const ITEMS_TEMPLATE = document.getElementById("itemTemplate");
 const ADD_BUTTON = document.getElementById("add");
-
+const RESET_BUTTON = document.getElementById("reset");
 
 let items = getItems();
 
@@ -28,6 +28,11 @@ function addItem() {
 
     setItems(items);
     refreshList();
+}
+
+function resetItem() {
+    localStorage.clear();
+    window.location.reload();
 }
 
 // 업데이트 할일 목록
