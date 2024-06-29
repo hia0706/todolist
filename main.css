@@ -35,7 +35,17 @@ h1 {
     margin: 20px auto;
 }
 
-button#delete img {
-    width: 12px; /* Adjust the size of the image if needed */
+#reset {
+    padding: 8px 14px;
+    font-weight: bold;
+    color: white;
+    background: gray;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+button.item-remove img {
+    width: 12px;
     height: 12px;
 }
