@@ -16,3 +16,8 @@
     background: #009578;
     cursor: pointer;
 }
+
+button#delete img {
+    width: 12px; /* Adjust the size of the image if needed */
+    height: 12px;
+}
