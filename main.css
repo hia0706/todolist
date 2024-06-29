@@ -20,29 +20,30 @@ h1 {
     margin-bottom: 10px;
 }
 
+.button-container {
+    text-align: center; /* 버튼을 가운데 정렬하기 위한 속성 */
+}
+
 .item-completed:checked + .item-description {
     background: #dddddd;
     text-decoration: line-through;
 }
 
-#add {
+#add, #reset {
     padding: 8px 14px;
     font-weight: bold;
     color: white;
-    background: #009578;
     cursor: pointer;
-    display: block;
-    margin: 20px auto;
+    display: inline-block;
+    margin: 0 10px; /* 버튼들 사이의 간격 조정 */
+}
+
+#add {
+    background: #009578;
 }
 
 #reset {
-    padding: 8px 14px;
-    font-weight: bold;
-    color: white;
     background: gray;
-    cursor: pointer;
-    display: block;
-    margin: 20px auto;
 }
 
 button.item-remove img {
