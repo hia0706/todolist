@@ -14,13 +14,12 @@ function onGeoSuccess(position) {
     fetch(url).then((response) => response.json())
         .then((json) => { // json 변환
             console.log(json);
-            const temperature = json.main.temp;
+            const temperature = Math.round(json.main.temp);
             const place = json.name;
-            const description = json.weather[0].main;
             const icon = json.weather[0].icon;
             const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`
 
-            tempSection.innerHTML = temperature;
+            tempSection.innerHTML = temperature + "°C";
             placeSection.innerHTML = place;
             iconSection.setAttribute('src', iconURL);
         });
