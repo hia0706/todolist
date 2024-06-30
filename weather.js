@@ -2,7 +2,7 @@ const tempSection = document.querySelector('.temperature');
 const placeSection = document.querySelector('.place');
 const iconSection = document.querySelector('.weather-icon');
 
-const API_KEY = config.apikey;
+const API_KEY = config.WEATHER_API_KEY;
 
 // 위치 정보 허용 시
 function onGeoSuccess(position) {
