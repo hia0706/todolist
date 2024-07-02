@@ -17,7 +17,7 @@ async function onGeoSuccess(position) {
             const temperature = Math.round(json.main.temp * 10) / 10;
             const place = json.name;
             const icon = json.weather[0].icon;
-            const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`
+            const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
 
             tempSection.innerHTML = temperature + "°C";
             placeSection.innerHTML = place;
