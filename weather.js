@@ -5,16 +5,16 @@ const iconSection = document.querySelector('.weather-icon');
 const API_KEY = config.WEATHER_API_KEY;
 
 // 위치 정보 허용 시
-function onGeoSuccess(position) {
+async function onGeoSuccess(position) {
     // console.log(position);
     const lat = position.coords.latitude; // 위도
     const lon = position.coords.longitude; // 경도
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=kr`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
     // fetch 를 사용하면 응답 데이터를 JSON 으로 인코딩해야 사용 가능
-    fetch(url).then((response) => response.json())
+    await fetch(url).then((response) => response.json())
         .then((json) => { // json 변환
             console.log(json);
-            const temperature = Math.round(json.main.temp);
+            const temperature = Math.round(json.main.temp * 10) / 10;
             const place = json.name;
             const icon = json.weather[0].icon;
             const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`
